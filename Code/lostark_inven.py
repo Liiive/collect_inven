@@ -8,7 +8,7 @@ result = {'date' : [],
 
 print('수집 시작')
 
-for j in range(20):
+for j in range(2):
     p = requests.get('https://www.inven.co.kr/board/lostark/5352?p=' + str(j))
     soup = BeautifulSoup(p.text, 'html.parser')
 
