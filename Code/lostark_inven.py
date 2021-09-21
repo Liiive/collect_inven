@@ -6,6 +6,8 @@ result = {'date' : [],
           'title' : [],
           'content' : []}
 
+print('수집 시작')
+
 for j in range(20):
     p = requests.get('https://www.inven.co.kr/board/lostark/5352?p=' + str(j))
     soup = BeautifulSoup(p.text, 'html.parser')
@@ -26,5 +28,9 @@ for j in range(20):
         result['title'].append(title)
         result['content'].append(content)
 
+print('수집 완료')
+
 final = pd.DataFrame(result)
 final.to_excel('balance_text.xlsx', index = False)
+
+print('파일 저장 완료')
